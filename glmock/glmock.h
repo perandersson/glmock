@@ -10,6 +10,10 @@
 // Commands
 #include "command/glDeleteTextures.h"
 
+#ifdef WIN32
+#undef GetMessage
+#endif
+
 namespace glmock
 {
 	class GLMockException

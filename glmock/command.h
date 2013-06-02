@@ -18,6 +18,10 @@ namespace glmock
 	public:
 		virtual ~ICommand() {}
 
+		//
+		// 
+		virtual const char* GetName() = 0;
+
 	public:
 	};
 }

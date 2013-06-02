@@ -12,6 +12,8 @@ namespace glmock
 		GLDeleteTextures();
 		virtual ~GLDeleteTextures();
 
+		virtual const char* GetName() { return "glDeleteTextures"; }
+
 	public:
 		GLDeleteTextures* Expect(GLsizei n);
 		void Result(const GLuint* textures);

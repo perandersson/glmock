@@ -30,12 +30,18 @@ GLMock::~GLMock()
 	if(mCommands.size() > 0) {
 		// Not all commands where invoked!!!
 		while(!mCommands.empty()) {
-			AddCommandError("", "");
+			ICommand* cmd = mCommands.front();
+			AddCommandError(cmd->GetName(), "Expected to be called but wasn't");
+			mCommands.pop();
 		}
 	}
 
 	if(!mErrors.empty()) {		
 		std::stringstream ss;
+		for(size_t i = 0; i < mErrors.size(); ++i) {
+			ss << mErrors[i]->Command << " => " << mErrors[i]->Error << std::endl;
+		}
+
 		throw GLMockException(ss.str());
 	}
 }
