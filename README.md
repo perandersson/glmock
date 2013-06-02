@@ -1,8 +1,7 @@
 glmock (0.1 Alpha)
 ======
 
-Mock framework for OpenGL application
-
+Mock framework for OpenGL application.
 
 ### How does it work?
 
@@ -16,11 +15,11 @@ If you are uncertain of why we use mock frameworks then please read this: http:/
 
 ### What can be expected by this framework?
 
-This framework is not a complete TDD framework. This library only supplies functionality which gives you the power to mock OpenGL calls. If you are interested in a TDD framework for C++ then I would recommend:
+This framework is not a complete TDD framework. This library only supplies functionality that gives you the power to mock OpenGL calls. If you are interested in a TDD framework for C++ then I would recommend:
 
 http://www.boost.org/doc/libs/1_53_0/libs/test/doc/html/index.html
 
-Or if you are feeling really adventurous - you can try to understand/decrypt/parse my own TDD framework that I developed for my game engine:
+Or if you are feeling really adventurous - you can try to understand/decrypt/parse my own TDD framework that I developed for my own game engine:
 
 https://github.com/perandersson/playstate
 
