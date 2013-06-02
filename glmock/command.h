@@ -1,27 +1,22 @@
 #pragma once
 
-#include <string>
 #include "defines.h"
 
 namespace glmock
 {
-	struct CommandError
+	//
+	// Container for the multiple command errors occuring inside the mock framework
+	struct DLL_EXPORT CommandError
 	{
-		std::string Command;
-		std::string Error;
+		char Command[50];
+		char Error[128];
 	};
 
 	//
 	// Base class for all the OpenGL commands
-	class ICommand
+	class DLL_EXPORT ICommand
 	{
 	public:
 		virtual ~ICommand() {}
-
-		//
-		// 
-		virtual const char* GetName() = 0;
-
-	public:
 	};
 }

@@ -1,9 +1,31 @@
-#include "../glmock.h"
+#include "glGetError.h"
+#include "../gl_framework.h"
 using namespace glmock;
 
+GLGetError::GLGetError() : mReturns(GL_NO_ERROR)
+{
+}
+
+GLGetError::~GLGetError()
+{
+}
+
+void GLGetError::Returns(GLenum returns)
+{
+	mReturns = returns;
+}
+
+GLenum GLGetError::Eval()
+{
+	return mReturns;
+}
 
 extern "C" {
-	GLenum GL_FUNCTION(glGetError)(){
+	DLL_EXPORT GLenum GL_FUNCTION(glGetError)() {
+		GLGetError* command = GLFramework::Get().CastAndGet<GLGetError>();
+		if(command != NULL) {
+			return command->Eval();
+		}
 		return GL_NO_ERROR;
 	}
 }

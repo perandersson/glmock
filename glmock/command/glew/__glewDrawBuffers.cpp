@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	void GLEW_FUNCTION(__glewDrawBuffers)(GLsizei n, const GLenum* bufs){
+	DLL_EXPORT void GLEW_FUNCTION(__glewDrawBuffers)(GLsizei n, const GLenum* bufs){
 	}
 }

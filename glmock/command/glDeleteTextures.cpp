@@ -1,5 +1,5 @@
 #include "glDeleteTextures.h"
-#include "../glmock.h"
+#include "../gl_framework.h"
 #include <memory>
 using namespace glmock;
 
@@ -32,12 +32,11 @@ void GLDeleteTextures::Eval(GLsizei n, const GLuint* textures)
 }
 
 extern "C" {
-	void GL_FUNCTION(glDeleteTextures)(GLsizei n, const GLuint* textures) {
-		GLDeleteTextures* command = GLMock::Get().CastAndGet<GLDeleteTextures>();
+	DLL_EXPORT void GL_FUNCTION(glDeleteTextures)(GLsizei n, const GLuint* textures) {
+		GLDeleteTextures* command = GLFramework::Get().CastAndGet<GLDeleteTextures>();
 		if(command != NULL) {
 			command->Eval(n, textures);
-		} else {
-			GLMock::Get().AddCommandError("glDeleteTextures", "");
+			delete command;
 		}
 	}
 }

@@ -2,7 +2,7 @@
 using namespace glmock;
 
 extern "C" {
-	GLuint GLEW_FUNCTION(__glewCreateShader)(GLuint shader){
+	DLL_EXPORT GLuint GLEW_FUNCTION(__glewCreateShader)(GLuint shader){
 		return 0;
 	}
 }

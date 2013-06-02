@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	void GL_FUNCTION(glDrawArrays)(GLenum mode, GLint first, GLsizei count){
+	DLL_EXPORT void GL_FUNCTION(glDrawArrays)(GLenum mode, GLint first, GLsizei count){
 	}
 }

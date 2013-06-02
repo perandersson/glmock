@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	void GL_FUNCTION(glBlendFunc)(GLenum sfactor, GLenum dfactor){
+	DLL_EXPORT void GL_FUNCTION(glBlendFunc)(GLenum sfactor, GLenum dfactor){
 	}
 }

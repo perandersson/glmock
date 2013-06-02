@@ -17,9 +17,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\glmock\glmock.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\glmock\command.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -29,11 +26,23 @@
     <ClInclude Include="..\..\glmock\command\glDeleteTextures.h">
       <Filter>Source Files\command</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\glmock\exception.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\glmock\framework.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\glmock\glmock.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\glmock\gl_framework.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\glmock\command\glGetError.h">
+      <Filter>Source Files\command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\glmock\glmock.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\glmock\command\glTexImage2.cpp">
       <Filter>Source Files\command</Filter>
     </ClCompile>
@@ -213,6 +222,15 @@
     </ClCompile>
     <ClCompile Include="..\..\glmock\command\glDrawArrays.cpp">
       <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\framework.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\gl_framework.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

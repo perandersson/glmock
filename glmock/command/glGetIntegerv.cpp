@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	void GL_FUNCTION(glGetIntegerv)(GLenum pname, GLint *params){
+	DLL_EXPORT void GL_FUNCTION(glGetIntegerv)(GLenum pname, GLint *params){
 	}
 }

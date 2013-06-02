@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	void GL_FUNCTION(glDisable)(GLenum cap){
+	DLL_EXPORT void GL_FUNCTION(glDisable)(GLenum cap){
 	}
 }

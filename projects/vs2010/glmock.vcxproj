@@ -13,8 +13,12 @@
   <ItemGroup>
     <ClInclude Include="..\..\glmock\command.h" />
     <ClInclude Include="..\..\glmock\command\glDeleteTextures.h" />
+    <ClInclude Include="..\..\glmock\command\glGetError.h" />
     <ClInclude Include="..\..\glmock\defines.h" />
+    <ClInclude Include="..\..\glmock\exception.h" />
+    <ClInclude Include="..\..\glmock\framework.h" />
     <ClInclude Include="..\..\glmock\glmock.h" />
+    <ClInclude Include="..\..\glmock\gl_framework.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glmock\command\glClear.cpp" />
@@ -77,7 +81,9 @@
     <ClCompile Include="..\..\glmock\command\glTexImage2.cpp" />
     <ClCompile Include="..\..\glmock\command\glTexParameteri.cpp" />
     <ClCompile Include="..\..\glmock\command\glViewport.cpp" />
-    <ClCompile Include="..\..\glmock\glmock.cpp" />
+    <ClCompile Include="..\..\glmock\exception.cpp" />
+    <ClCompile Include="..\..\glmock\framework.cpp" />
+    <ClCompile Include="..\..\glmock\gl_framework.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C5C88D14-117C-4B4C-8721-F0720DC6BF75}</ProjectGuid>
@@ -86,12 +92,12 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
@@ -125,7 +131,8 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_DLL;EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4227</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -143,7 +150,8 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_DLL;EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4227</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

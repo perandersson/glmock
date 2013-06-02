@@ -1,8 +1,7 @@
 #include "../glmock.h"
 using namespace glmock;
 
-
 extern "C" {
-	void GL_FUNCTION(glFlush)(){
+	DLL_EXPORT void GL_FUNCTION(glFlush)(){
 	}
 }

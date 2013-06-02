@@ -16,12 +16,14 @@ TestCase(MyTestCase)
 {
 	const GLsizei n = 1;
 	const GLuint textures[1] = { 1 };
-	
-	glmock::GLMock mock;
-	mock.glDeleteTextures()->Expect(n)->Result(textures);
+
+	glmock::IFramework* mock = glmock::Create();
+	mock->glDeleteTextures()->Expect(n)->Result(textures);
+	mock->glGetError()->Returns(GL_NO_ERROR);
 	
 	glDeleteTextures(n, textures);
+	GLenum err = glGetError();
+
+	glmock::Destroy(mock);
 }
 ```
-
-###

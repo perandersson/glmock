@@ -643,7 +643,13 @@ typedef ptrdiff_t GLsizeiptr;
 #define GL_MAX_SAMPLES 0x8D57
 
 // Add more types here later
+#ifdef EXPORT_DLL
+#define DLL_EXPORT __declspec(dllexport)
 #define CALL_TYPE __stdcall 
+#else
+#define DLL_EXPORT __declspec(dllimport)
+#define CALL_TYPE __stdcall 
+#endif
 
-#define GL_FUNCTION(F) CALL_TYPE _imp__##F
-#define GLEW_FUNCTION(F) _imp__##F
+#define GL_FUNCTION(F) CALL_TYPE F
+#define GLEW_FUNCTION(F) F

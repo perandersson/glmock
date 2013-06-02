@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	void GLEW_FUNCTION(__glewBindVertexArray)(GLuint array){
+	DLL_EXPORT void GLEW_FUNCTION(__glewBindVertexArray)(GLuint array){
 	}
 }

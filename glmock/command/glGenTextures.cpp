@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	void GL_FUNCTION(glGenTextures)(GLsizei n, const GLint* textures){
+	DLL_EXPORT void GL_FUNCTION(glGenTextures)(GLsizei n, const GLint* textures){
 	}
 }
