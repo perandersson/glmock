@@ -33,9 +33,9 @@ namespace glmock
 			T* casted = dynamic_cast<T*>(cmd);
 			if(casted == 0) {
 				std::string error = "Expected: ";
-				error += typeid(T).name();
-				error += " but was: ";
 				error += typeid(*cmd).name();
+				error += " but was: ";
+				error += typeid(T).name();
 				AddCommandError(cmd, error.c_str());
 				delete cmd;
 			}

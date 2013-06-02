@@ -2,7 +2,7 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT GLint GLEW_FUNCTION(__glewGetUniformLocation)(GLuint program, const GLchar* name){
+	DLL_EXPORT GLint __glewGetUniformLocation(GLuint program, const GLchar* name) {
 		return 0;
 	}
 }

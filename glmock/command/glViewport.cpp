@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void GL_FUNCTION(glViewport)(GLint x, GLint y, GLsizei width, GLsizei height){
+	DLL_EXPORT void CALL_CONV glViewport(GLint x, GLint y, GLsizei width, GLsizei height){
 	}
 }

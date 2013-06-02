@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void GL_FUNCTION(glDepthFunc)(GLenum func){
+	DLL_EXPORT void CALL_CONV glDepthFunc(GLenum func) {
 	}
 }

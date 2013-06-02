@@ -21,7 +21,7 @@ GLenum GLGetError::Eval()
 }
 
 extern "C" {
-	DLL_EXPORT GLenum GL_FUNCTION(glGetError)() {
+	DLL_EXPORT GLenum CALL_CONV glGetError(void) {
 		GLGetError* command = GLFramework::Get().CastAndGet<GLGetError>();
 		if(command != NULL) {
 			return command->Eval();

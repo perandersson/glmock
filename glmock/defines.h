@@ -645,11 +645,8 @@ typedef ptrdiff_t GLsizeiptr;
 // Add more types here later
 #ifdef EXPORT_DLL
 #define DLL_EXPORT __declspec(dllexport)
-#define CALL_TYPE __stdcall 
+#define CALL_CONV __stdcall 
 #else
 #define DLL_EXPORT __declspec(dllimport)
-#define CALL_TYPE __stdcall 
+#define CALL_CONV __stdcall 
 #endif
-
-#define GL_FUNCTION(F) CALL_TYPE F
-#define GLEW_FUNCTION(F) F

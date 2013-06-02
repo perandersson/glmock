@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void GL_FUNCTION(glClear)(GLbitfield mask){
+	DLL_EXPORT void CALL_CONV glClear(GLbitfield mask) {
 	}
 }

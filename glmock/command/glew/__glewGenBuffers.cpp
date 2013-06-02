@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void GLEW_FUNCTION(__glewGenBuffers)(GLsizei n, GLuint* buffers){
+	DLL_EXPORT void __glewGenBuffers(GLsizei n, GLuint* buffers) {
 	}
 }

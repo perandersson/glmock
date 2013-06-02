@@ -21,7 +21,7 @@ void GLDeleteTextures::Eval(GLsizei n, const GLuint* textures)
 }
 
 extern "C" {
-	DLL_EXPORT void GL_FUNCTION(glDeleteTextures)(GLsizei n, const GLuint* textures) {
+	DLL_EXPORT void CALL_CONV glDeleteTextures(GLsizei n, const GLuint* textures) {
 		GLDeleteTextures* command = GLFramework::Get().CastAndGet<GLDeleteTextures>();
 		if(command != NULL) {
 			command->Eval(n, textures);

@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void GL_FUNCTION(glCullFace)(GLenum mode){
+	DLL_EXPORT void CALL_CONV glCullFace(GLenum mode) {
 	}
 }

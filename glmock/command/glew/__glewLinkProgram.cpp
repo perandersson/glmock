@@ -2,7 +2,7 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT GLuint GLEW_FUNCTION(__glewLinkProgram)(GLuint program){
+	DLL_EXPORT GLuint __glewLinkProgram(GLuint program) {
 		return 0;
 	}
 }

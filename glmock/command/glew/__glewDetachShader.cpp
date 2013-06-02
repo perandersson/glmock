@@ -2,6 +2,6 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void GLEW_FUNCTION(__glewDetachShader)(GLuint program, GLuint shader){
+	DLL_EXPORT void __glewDetachShader(GLuint program, GLuint shader) {
 	}
 }
