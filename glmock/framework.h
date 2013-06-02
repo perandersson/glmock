@@ -6,6 +6,7 @@
 
 // Commands
 #include "command/glDeleteTextures.h"
+#include "command/glBindTexture.h"
 #include "command/glGetError.h"
 
 namespace glmock
@@ -17,6 +18,7 @@ namespace glmock
 
 	public:
 		virtual GLDeleteTextures* glDeleteTextures(GLsizei n, const GLuint* textures) = 0;
+		virtual GLBindTexture* glBindTexture(GLenum target, GLuint texture) = 0;
 		virtual GLGetError* glGetError() = 0;
 	};
 

@@ -42,6 +42,13 @@ GLDeleteTextures* GLFramework::glDeleteTextures(GLsizei n, const GLuint* texture
 	return command;
 }
 
+GLBindTexture* GLFramework::glBindTexture(GLenum target, GLuint texture)
+{
+	GLBindTexture* command = new GLBindTexture(target, texture);
+	mCommands.push(command);
+	return command;
+}
+
 GLGetError* GLFramework::glGetError()
 {
 	GLGetError* command = new GLGetError();

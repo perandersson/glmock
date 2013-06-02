@@ -38,7 +38,7 @@ And
 GLenum err = glGetError();
 ```
 
-Both the functions above returns a value, but the first one returns a value using the argument list instead of an actual returned value. The framework assumes that all "result" parameters are actual results and will therefor not be validated. For example:
+Both the functions above returns a value but the first example returns a value via the parameter list instead of an actual returned value. The framework assumes that all "result" parameters are actual results and will therefor not be validated. For example:
 
 ```cpp
 TestCase(MyTestCase)

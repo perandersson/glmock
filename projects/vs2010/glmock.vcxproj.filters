@@ -41,6 +41,9 @@
     <ClInclude Include="..\..\glmock\command\glGetError.h">
       <Filter>Source Files\command</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\glmock\command\glBindTexture.h">
+      <Filter>Source Files\command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glmock\command\glTexImage2.cpp">

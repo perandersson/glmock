@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\glmock\command.h" />
+    <ClInclude Include="..\..\glmock\command\glBindTexture.h" />
     <ClInclude Include="..\..\glmock\command\glDeleteTextures.h" />
     <ClInclude Include="..\..\glmock\command\glGetError.h" />
     <ClInclude Include="..\..\glmock\defines.h" />
