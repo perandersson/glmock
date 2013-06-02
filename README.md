@@ -9,7 +9,7 @@ By linking with this library instead of the original OpenGL libraries we can hig
 
 ### Purpose
 
-The purpose for this framework is NOT to test if OpenGL works in your application (i.e. if a triangle will be visible or not), but rather to test if the application is calling the OpenGL that you (the developer) is expecting.
+The purpose for this framework is NOT to test if OpenGL works in your application (i.e. if a triangle will be visible or not), but rather to test if the application is calling the OpenGL functions that you (the developer) is expecting.
 
 If you are uncertain of why we use mock frameworks then please read this: http://en.wikipedia.org/wiki/Mock_object
 
