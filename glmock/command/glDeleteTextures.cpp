@@ -3,7 +3,7 @@
 #include <memory>
 using namespace glmock;
 
-GLDeleteTextures::GLDeleteTextures() : mExpect(0), mResult(0)
+GLDeleteTextures::GLDeleteTextures(GLsizei n, const GLuint* textures) : mN(n), mTextures(textures)
 {
 }
 
@@ -11,24 +11,13 @@ GLDeleteTextures::~GLDeleteTextures()
 {
 }
 
-GLDeleteTextures* GLDeleteTextures::Expect(GLsizei n)
-{
-	mExpect = n;
-	return this;
-}
-
-void GLDeleteTextures::Result(const GLuint* textures)
-{
-	mResult = textures;
-}
-
 void GLDeleteTextures::Eval(GLsizei n, const GLuint* textures)
 {
-	if(mExpect != n) {
+	if(mN != n) {
 		// Fatal error!!!
 	}
 
-	memcpy(const_cast<GLuint*>(textures), mResult, mExpect);
+	memcpy(const_cast<GLuint*>(textures), mTextures, mN);
 }
 
 extern "C" {

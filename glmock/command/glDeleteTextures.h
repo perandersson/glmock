@@ -9,19 +9,15 @@ namespace glmock
 	class DLL_EXPORT GLDeleteTextures : public ICommand
 	{
 	public:
-		GLDeleteTextures();
+		GLDeleteTextures(GLsizei n, const GLuint* textures);
 		virtual ~GLDeleteTextures();
-
-	public:
-		GLDeleteTextures* Expect(GLsizei n);
-		void Result(const GLuint* textures);
 
 	public:
 		// 
 		void Eval(GLsizei n, const GLuint* textures);
 
 	private:
-		GLsizei mExpect;
-		const GLuint* mResult;
+		GLsizei mN;
+		const GLuint* mTextures;
 	};
 }

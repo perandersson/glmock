@@ -35,9 +35,9 @@ GLFramework& GLFramework::Get()
 	return *__instance;
 }
 
-GLDeleteTextures* GLFramework::glDeleteTextures()
+GLDeleteTextures* GLFramework::glDeleteTextures(GLsizei n, const GLuint* textures)
 {
-	GLDeleteTextures* command = new GLDeleteTextures();
+	GLDeleteTextures* command = new GLDeleteTextures(n, textures);
 	mCommands.push(command);
 	return command;
 }

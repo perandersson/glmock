@@ -19,7 +19,7 @@ namespace glmock
 
 	// IFramework
 	public:
-		virtual GLDeleteTextures* glDeleteTextures();
+		virtual GLDeleteTextures* glDeleteTextures(GLsizei n, const GLuint* textures);
 		virtual GLGetError* glGetError();
 
 	public:
