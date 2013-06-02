@@ -1,7 +1,8 @@
-glmock
+glmock (0.1 Alpha)
 ======
 
 Mock framework for OpenGL application
+
 
 ### How does it work?
 
