@@ -5,7 +5,7 @@ Mock framework for OpenGL application
 
 ### How does it work?
 
-By linking with this framework instead of the original OpenGL libraries we can highjack all OpenGL calls into the mock framework intsead. It is not possible to build a command chain of the expected function calls.
+By linking with this framework instead of the original OpenGL libraries we can highjack all OpenGL calls into the mock framework instead. It is now possible to build a command chain of the expected function calls.
 
 ### Purpose
 
