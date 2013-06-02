@@ -22,11 +22,13 @@ GLuint textures;
 glGenTextures(1, &textures);
 ```
 
+And
+
 ```cpp
 GLenum err = glGetError();
 ```
 
-Both the functions above returns a value, but the first one is via the argument list instead of an actual return value. The framework assumes that all "result" parameters are actual results and not "asserts". For example:
+Both the functions above returns a value, but the first one returns a value using the argument list instead of an actual returned value. The framework assumes that all "result" parameters are actual results and will therefor not be validated. For example:
 
 ```cpp
 TestCase(MyTestCase)
@@ -39,14 +41,14 @@ TestCase(MyTestCase)
 	
 	GLuint texture;
 	
-	// Validates that the first parameter is 1 and sets the texture field into 10 (specified above)
+	// Validates that the first argument is the value "1" and then sets the texture field into 10 (as specified above)
 	glGenTextures(n, &texture);
 
 	glmock::Destroy(mock);
 }
 ```
 
-In cases where a value is actually returned then a return statement must be specified. This is usually dont using a *Returns* method. For example:
+In cases where a value is actually returned then a return statement must be specified. This is usually done using a **Returns** method. For example:
 
 ```cpp
 TestCase(MyTestCase)
