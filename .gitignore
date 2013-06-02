@@ -1,13 +1,13 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
+projects/vs2010/*.sdf
+projects/vs2010/*.opensdf
+projects/vs2010/*.suo
+projects/vs2010/ipch/*
+bin/Debug/*
+bin/Release/*
+bin/Debug Without Test/*
+bin/*.exe
+bin/*.ilk
+bin/*.pdb
+bin/*.lib
+projects/vs2010/bin/*
+projects/vs2010/*.vsp
