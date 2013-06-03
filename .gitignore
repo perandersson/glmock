@@ -9,5 +9,7 @@ bin/*.exe
 bin/*.ilk
 bin/*.pdb
 bin/*.lib
+bin/*.dll
+bin/*.exp
 projects/vs2010/bin/*
 projects/vs2010/*.vsp
