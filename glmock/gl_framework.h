@@ -8,6 +8,21 @@
 
 namespace glmock
 {
+	class ExceptionErrorCallback : public IErrorCallback
+	{
+	public:
+		ExceptionErrorCallback();
+		~ExceptionErrorCallback();
+
+	public:
+		virtual void OnCommandNotCalled(const ICommand* command);
+		virtual void OnBadParameter(const ICommand* command, const char* name, const char* expected, const char* actual);
+		virtual void OnBadFunctionCalled(const ICommand* command, const char* actual);
+
+	private:
+		std::vector<CommandError> mErrors;
+	};
+
 	class GLFramework : public IFramework
 	{
 	public:
@@ -19,8 +34,11 @@ namespace glmock
 
 	// IFramework
 	public:
+		virtual void RegisterErrorCallback(IErrorCallback* calback);
+
 		virtual GLDeleteTextures* glDeleteTextures(GLsizei n, const GLuint* textures);
 		virtual GLBindTexture* glBindTexture(GLenum target, GLuint texture);
+		virtual GLBlendFunc* glBlendFunc(GLenum sfactor, GLenum dfactor);
 		virtual GLGetError* glGetError();
 
 	public:
@@ -33,24 +51,20 @@ namespace glmock
 			
 			T* casted = dynamic_cast<T*>(cmd);
 			if(casted == 0) {
-				std::string error = "Expected: ";
-				error += typeid(*cmd).name();
-				error += " but was: ";
-				error += typeid(T).name();
-				AddCommandError(cmd, error.c_str());
+				mErrorCallback->OnBadFunctionCalled(cmd, typeid(T).name());
 				delete cmd;
 			}
 
 			return casted;
 		}
-
-		//
-		// 
-		void AddCommandError(ICommand* command, const char* error);
 		
+		//
+		static void OnBadParameter(const ICommand* command, const char* paramName, const char* expected, const char* actual);
+
 	private:
 		std::queue<ICommand*> mCommands;
-		std::vector<CommandError> mErrors;
+		IErrorCallback* mErrorCallback;
+		ExceptionErrorCallback mDefaultErrorCallback;
 	};
 
 }

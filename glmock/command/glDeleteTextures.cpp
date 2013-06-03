@@ -14,12 +14,15 @@ GLDeleteTextures::~GLDeleteTextures()
 void GLDeleteTextures::Eval(GLsizei n, const GLuint* textures)
 {
 	if(mN != n) {
-		GLFramework::Get().AddCommandError(this, "Parameter 'n' is invalid");
+		char expected[10] = {0};
+		char actual[10] = {0};
+		itoa(mN, expected, 10);
+		itoa(n, actual, 10);
+		GLFramework::OnBadParameter(this, "n", expected, actual);
 	} else {
 		for(GLsizei i = 0; i < n; ++i) {
 			if(textures[i] != mTextures[i]) {
-				GLFramework::Get().AddCommandError(this, "Parameter 'textures' is invalid");
-				return;
+				GLFramework::OnBadParameter(this, "textures", "[...]", "[...]");
 			}
 		}
 	}

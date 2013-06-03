@@ -15,11 +15,19 @@ GLBindTexture::~GLBindTexture()
 void GLBindTexture::Eval(GLenum target, GLuint texture)
 {
 	if(mTarget != target) {
-		GLFramework::Get().AddCommandError(this, "Parameter 'target' is invalid");
+		char expected[10] = {0};
+		char actual[10] = {0};
+		itoa(mTarget, expected, 10);
+		itoa(target, actual, 10);
+		GLFramework::OnBadParameter(this, "target", expected, actual);
 	}
 
 	if(mTexture != texture) {
-		GLFramework::Get().AddCommandError(this, "Parameter 'texture' is invalid");
+		char expected[10] = {0};
+		char actual[10] = {0};
+		itoa(mTexture, expected, 10);
+		itoa(texture, actual, 10);
+		GLFramework::OnBadParameter(this, "texture", expected, actual);
 	}
 }
 
