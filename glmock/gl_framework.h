@@ -37,6 +37,8 @@ namespace glmock
 		virtual void RegisterErrorCallback(IErrorCallback* calback);
 
 		virtual GLDeleteTextures* glDeleteTextures(GLsizei n, const GLuint* textures);
+		virtual GLTexImage2D* glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, 
+			GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels);
 		virtual GLBindTexture* glBindTexture(GLenum target, GLuint texture);
 		virtual GLBlendFunc* glBlendFunc(GLenum sfactor, GLenum dfactor);
 		virtual GLGetError* glGetError();

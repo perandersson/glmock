@@ -16,6 +16,7 @@
     <ClInclude Include="..\..\glmock\command\glBlendFunc.h" />
     <ClInclude Include="..\..\glmock\command\glDeleteTextures.h" />
     <ClInclude Include="..\..\glmock\command\glGetError.h" />
+    <ClInclude Include="..\..\glmock\command\glTexImage2D.h" />
     <ClInclude Include="..\..\glmock\defines.h" />
     <ClInclude Include="..\..\glmock\exception.h" />
     <ClInclude Include="..\..\glmock\framework.h" />
@@ -80,7 +81,7 @@
     <ClCompile Include="..\..\glmock\command\glGetError.cpp" />
     <ClCompile Include="..\..\glmock\command\glGetIntegerv.cpp" />
     <ClCompile Include="..\..\glmock\command\glGetString.cpp" />
-    <ClCompile Include="..\..\glmock\command\glTexImage2.cpp" />
+    <ClCompile Include="..\..\glmock\command\glTexImage2D.cpp" />
     <ClCompile Include="..\..\glmock\command\glTexParameteri.cpp" />
     <ClCompile Include="..\..\glmock\command\glViewport.cpp" />
     <ClCompile Include="..\..\glmock\exception.cpp" />

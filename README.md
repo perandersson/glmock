@@ -75,14 +75,28 @@ TestCase(MyTestCase)
 
 ### Example
 
+If the mock-framework wouldn't be in use then this exampel would create a texture so that we can draw it on the screen in the future. To create a texture in OpenGL three things has to be done:
+
+1. Generate a texture ID
+2. Bind The texture
+3. Fill the texture with data
+4. Make sure that no errors has occured.
+
+We know this. But it's not interesting to see if the actual texture works or not, but that we actually called the correct OpenGL commands. This is the purpose of this mock framework. 
+
 ```cpp
 TestCase(MyTestCase)
 {
 	const GLsizei n = 1;
 	const GLuint textures[1] = { 1 };
+	const GLfloat width = 1;
+	const GLfloat height = 1;
+	const GLfloat pixels[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
 	glmock::IFramework* mock = glmock::Create();
-	mock->glDeleteTextures(n, textures);
+	mock->glGenTextures(n, textures);
+	mock->glBindTexture(GL_TEXTURE_2D, textures[0]);
+	mock->glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_FLOAT, GL_RGBA, pixels);
 	mock->glGetError()->Returns(GL_NO_ERROR);
 	
 	// Validates the following things:
@@ -90,8 +104,13 @@ TestCase(MyTestCase)
 	// 2. Validates the function parameters (as long as they aren't "return" values)
 	// 3. Returns the value specified by the framework (using the Returns method).
 
-	glDeleteTextures(n, textures);
-	GLenum err = glGetError();
+	Texture* texture = new Texture2D(width, height, pixels);
+	
+	// The above code will do:
+	//glGenTextures(n, textures);
+	//glBindTexture(GL_TEXTURE_2D, textures[0]);
+	//glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_FLOAT, GL_RGBA, pixels);
+	//GLenum err = glGetError();
 
 	// Releases allocated resources and validates that the functions have been invoked correctly
 	glmock::Destroy(mock);

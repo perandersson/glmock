@@ -85,6 +85,14 @@ GLDeleteTextures* GLFramework::glDeleteTextures(GLsizei n, const GLuint* texture
 	return command;
 }
 
+GLTexImage2D* GLFramework::glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, 
+			GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
+{
+	GLTexImage2D* command = new GLTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
+	mCommands.push(command);
+	return command;
+}
+
 GLBindTexture* GLFramework::glBindTexture(GLenum target, GLuint texture)
 {
 	GLBindTexture* command = new GLBindTexture(target, texture);

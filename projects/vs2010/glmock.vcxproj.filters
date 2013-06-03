@@ -47,11 +47,11 @@
     <ClInclude Include="..\..\glmock\command\glBlendFunc.h">
       <Filter>Source Files\command</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\glmock\command\glTexImage2D.h">
+      <Filter>Source Files\command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\glmock\command\glTexImage2.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\glmock\command\glTexParameteri.cpp">
       <Filter>Source Files\command</Filter>
     </ClCompile>
@@ -237,6 +237,9 @@
     </ClCompile>
     <ClCompile Include="..\..\glmock\gl_framework.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\command\glTexImage2D.cpp">
+      <Filter>Source Files\command</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
