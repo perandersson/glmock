@@ -2,7 +2,9 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT GLuint __glewCreateProgram(void) {
+#undef glCreateProgram
+	GLuint CALL_CONV glCreateProgram(void) {
 		return 0;
 	}
+	PFNGLCREATEPROGRAMPROC __glewCreateProgram = &glCreateProgram; 
 }

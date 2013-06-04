@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewBindBuffer(GLenum target, GLuint buffer) {
+#undef glBindBuffer
+	void CALL_CONV glBindBuffer(GLenum target, GLuint buffer) {
 	}
+	DLL_EXPORT PFNGLBINDBUFFERPROC __glewBindBuffer = &glBindBuffer; 
 }

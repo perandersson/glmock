@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewActiveTexture(GLenum texture) {
+#undef glActiveTexture
+	void CALL_CONV glActiveTexture(GLenum texture) {
 	}
+	DLL_EXPORT PFNGLACTIVETEXTUREPROC __glewActiveTexture = &glActiveTexture; 
 }

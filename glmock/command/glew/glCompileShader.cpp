@@ -2,7 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewCompileShader(GLuint shader) {
-		
+#undef glCompileShader
+	void CALL_CONV glCompileShader(GLuint shader) {
 	}
+	PFNGLCOMPILESHADERPROC __glewCompileShader = &glCompileShader; 
 }

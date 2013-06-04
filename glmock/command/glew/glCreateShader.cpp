@@ -2,7 +2,9 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT GLuint __glewCreateShader(GLuint shader) {
+	#undef glCreateShader
+	GLuint CALL_CONV glCreateShader(GLuint shader) {
 		return 0;
 	}
+	PFNGLCREATESHADERPROC __glewCreateShader = &glCreateShader;
 }

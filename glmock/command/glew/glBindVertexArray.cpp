@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewBindVertexArray(GLuint array) {
+#undef glBindVertexArray
+	void CALL_CONV glBindVertexArray(GLuint array) {
 	}
+	DLL_EXPORT PFNGLBINDVERTEXARRAYPROC __glewBindVertexArray = &glBindVertexArray; 
 }

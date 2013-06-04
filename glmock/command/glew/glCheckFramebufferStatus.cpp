@@ -2,7 +2,9 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT GLenum __glewCheckFramebufferStatus(GLenum target) {
+#undef glCheckFramebufferStatus
+	GLenum CALL_CONV glCheckFramebufferStatus(GLenum target) {
 		return GL_FRAMEBUFFER_COMPLETE;
 	}
+	PFNGLCHECKFRAMEBUFFERSTATUSPROC __glewCheckFramebufferStatus = &glCheckFramebufferStatus; 
 }

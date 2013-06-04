@@ -2,7 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewDeleteShader(GLuint shader) {
-		
+	#undef glDeleteShader
+	void CALL_CONV glDeleteShader(GLuint shader) {
 	}
+	DLL_EXPORT PFNGLDELETESHADERPROC __glewDeleteShader = &glDeleteShader; 
 }

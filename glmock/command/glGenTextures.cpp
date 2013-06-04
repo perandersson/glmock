@@ -1,4 +1,5 @@
 #include "../glmock.h"
+#include "../gl_framework.h"
 using namespace glmock;
 
 extern "C" {

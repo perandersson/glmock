@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewDeleteFramebuffers(GLsizei n, const GLuint* framebuffers) {
+	#undef glDeleteFramebuffers
+	void CALL_CONV glDeleteFramebuffers(GLsizei n, const GLuint* framebuffers) {
 	}
+	DLL_EXPORT PFNGLDELETEFRAMEBUFFERSPROC __glewDeleteFramebuffers = &glDeleteFramebuffers;
 }

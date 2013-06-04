@@ -2,7 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT GLuint __glewAttachShader(GLuint program, GLuint shader) {
-		return 0;
+#undef glAttachShader
+	void CALL_CONV glAttachShader(GLuint program, GLuint shader) {
 	}
+	DLL_EXPORT PFNGLATTACHSHADERPROC __glewAttachShader = &glAttachShader; 
 }

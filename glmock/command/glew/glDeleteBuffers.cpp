@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewDeleteBuffers(GLsizei n, const GLuint* buffers) {
+	#undef glDeleteBuffers
+	void CALL_CONV glDeleteBuffers(GLsizei n, const GLuint* buffers) {
 	}
+	DLL_EXPORT PFNGLDELETEBUFFERSPROC __glewDeleteBuffers = &glDeleteBuffers;
 }

@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewDetachShader(GLuint program, GLuint shader) {
+	#undef glDetachShader
+	void CALL_CONV glDetachShader(GLuint program, GLuint shader) {
 	}
+	DLL_EXPORT PFNGLDETACHSHADERPROC __glewDetachShader = &glDetachShader;
 }

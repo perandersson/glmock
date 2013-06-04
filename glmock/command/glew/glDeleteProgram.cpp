@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewDeleteProgram(GLuint program) {
+	#undef glDeleteProgram
+	void CALL_CONV glDeleteProgram(GLuint program) {
 	}
+	DLL_EXPORT PFNGLDELETEPROGRAMPROC __glewDeleteProgram = &glDeleteProgram; 
 }

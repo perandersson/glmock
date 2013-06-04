@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewBindFramebuffer(GLenum target, GLuint framebuffer) {
+#undef glBindFramebuffer;
+	void CALL_CONV glBindFramebuffer(GLenum target, GLuint framebuffer) {
 	}
+	PFNGLBINDFRAMEBUFFERPROC __glewBindFramebuffer = &glBindFramebuffer; 
 }
