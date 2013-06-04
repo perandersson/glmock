@@ -53,6 +53,9 @@
     <ClInclude Include="..\..\glmock\gl_strings.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\glmock\command\glew\glUseProgram.h">
+      <Filter>Source Files\command\glew</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glmock\command\glTexParameteri.cpp">

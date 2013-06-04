@@ -116,6 +116,13 @@ GLBlendFunc* GLFramework::glBlendFunc(GLenum sfactor, GLenum dfactor)
 	return command;
 }
 
+GLUseProgram* GLFramework::glUseProgram(GLuint program)
+{
+	GLUseProgram* command = new GLUseProgram(program);
+	mCommands.push(command);
+	return command;
+}
+
 void GLFramework::OnBadParameter(const ICommand* command, const char* paramName, const char* expected, const char* actual)
 {
 	__instance->mErrorCallback->OnBadParameter(command, paramName, expected, actual);

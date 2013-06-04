@@ -10,6 +10,8 @@
 #include "command/glBlendFunc.h"
 #include "command/glGetError.h"
 
+#include "command/glew/glUseProgram.h"
+
 namespace glmock
 {
 	//
@@ -59,6 +61,7 @@ namespace glmock
 		virtual GLBindTexture* glBindTexture(GLenum target, GLuint texture) = 0;
 		virtual GLBlendFunc* glBlendFunc(GLenum sfactor, GLenum dfactor) = 0;
 		virtual GLGetError* glGetError() = 0;
+		virtual GLUseProgram* glUseProgram(GLuint program) = 0;
 	};
 
 	// 

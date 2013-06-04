@@ -15,6 +15,7 @@
     <ClInclude Include="..\..\glmock\command\glBindTexture.h" />
     <ClInclude Include="..\..\glmock\command\glBlendFunc.h" />
     <ClInclude Include="..\..\glmock\command\glDeleteTextures.h" />
+    <ClInclude Include="..\..\glmock\command\glew\glUseProgram.h" />
     <ClInclude Include="..\..\glmock\command\glGetError.h" />
     <ClInclude Include="..\..\glmock\command\glTexImage2D.h" />
     <ClInclude Include="..\..\glmock\defines.h" />

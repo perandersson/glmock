@@ -44,6 +44,7 @@ namespace glmock
 		virtual GLBindTexture* glBindTexture(GLenum target, GLuint texture);
 		virtual GLBlendFunc* glBlendFunc(GLenum sfactor, GLenum dfactor);
 		virtual GLGetError* glGetError();
+		virtual GLUseProgram* glUseProgram(GLuint program);
 
 	public:
 		//
