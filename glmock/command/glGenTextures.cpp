@@ -3,6 +3,6 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void CALL_CONV glGenTextures(GLsizei n, const GLint* textures) {
+	DLL_EXPORT void CALL_CONV glGenTextures(GLsizei n, GLuint* textures) {
 	}
 }
