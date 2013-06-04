@@ -181,9 +181,6 @@
     <ClCompile Include="..\..\glmock\command\glew\__glewLinkProgram.cpp">
       <Filter>Source Files\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\__glewUseProgram.cpp">
-      <Filter>Source Files\command\glew</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\glmock\command\glew\__glewShaderSource.cpp">
       <Filter>Source Files\command\glew</Filter>
     </ClCompile>
@@ -242,6 +239,9 @@
       <Filter>Source Files\command</Filter>
     </ClCompile>
     <ClCompile Include="..\..\glmock\command\glew\glVertexAttribPointer.cpp">
+      <Filter>Source Files\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\command\glew\glUseProgram.cpp">
       <Filter>Source Files\command\glew</Filter>
     </ClCompile>
   </ItemGroup>

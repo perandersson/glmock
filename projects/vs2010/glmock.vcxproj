@@ -74,7 +74,7 @@
     <ClCompile Include="..\..\glmock\command\glew\__glewUniform3iv.cpp" />
     <ClCompile Include="..\..\glmock\command\glew\__glewUniform4fv.cpp" />
     <ClCompile Include="..\..\glmock\command\glew\__glewUniformMatrix4fv.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\__glewUseProgram.cpp" />
+    <ClCompile Include="..\..\glmock\command\glew\glUseProgram.cpp" />
     <ClCompile Include="..\..\glmock\command\glew\glVertexAttribPointer.cpp" />
     <ClCompile Include="..\..\glmock\command\glFlush.cpp" />
     <ClCompile Include="..\..\glmock\command\glFrontFace.cpp" />
