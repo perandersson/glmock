@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewGenFramebuffers(GLsizei n, GLuint* framebuffers) {
+	#undef glGenFramebuffers
+	void CALL_CONV glGenFramebuffers(GLsizei n, GLuint* framebuffers) {
 	}
+	DLL_EXPORT PFNGLGENFRAMEBUFFERSPROC __glewGenFramebuffers = &glGenFramebuffers; 
 }

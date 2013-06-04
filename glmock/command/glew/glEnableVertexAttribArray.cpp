@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewEnableVertexAttribArray(GLuint en) {
+	#undef glEnableVertexAttribArray
+	void CALL_CONV glEnableVertexAttribArray(GLuint en) {
 	}
+	PFNGLENABLEVERTEXATTRIBARRAYPROC __glewEnableVertexAttribArray = &glEnableVertexAttribArray; 
 }

@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewGenVertexArrays(GLsizei n, GLuint* arrays) {
+	#undef glGenVertexArrays
+	void CALL_CONV glGenVertexArrays(GLsizei n, GLuint* arrays) {
 	}
+	DLL_EXPORT PFNGLGENVERTEXARRAYSPROC __glewGenVertexArrays = &glGenVertexArrays; 
 }

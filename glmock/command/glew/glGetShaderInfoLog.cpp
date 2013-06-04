@@ -2,7 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT GLuint __glewGetShaderInfoLog(GLuint shader, GLsizei bufSize, GLsizei* length, GLchar* infoLog) {
-		return 0;
+	#undef glGetShaderInfoLog
+	void CALL_CONV glGetShaderInfoLog(GLuint shader, GLsizei bufSize, GLsizei* length, GLchar* infoLog) {
 	}
+	DLL_EXPORT PFNGLGETSHADERINFOLOGPROC __glewGetShaderInfoLog = &glGetShaderInfoLog; 
 }

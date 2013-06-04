@@ -2,6 +2,8 @@
 using namespace glmock;
 
 extern "C" {
-	DLL_EXPORT void __glewGetProgramiv(GLuint program, GLenum pname, GLint* param) {
+	#undef glGetProgramiv
+	void CALL_CONV glGetProgramiv(GLuint program, GLenum pname, GLint* param) {
 	}
+	DLL_EXPORT PFNGLGETPROGRAMIVPROC __glewGetProgramiv = &glGetProgramiv;
 }
