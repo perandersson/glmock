@@ -16,6 +16,9 @@ namespace glmock
 		void Eval(GLenum target, GLuint texture);
 
 	private:
+		const char* AsString(GLenum value);
+
+	private:
 		GLenum mTarget;
 		GLuint mTexture;
 	};

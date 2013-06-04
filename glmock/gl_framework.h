@@ -1,6 +1,8 @@
 #pragma once
 
 #include "framework.h"
+#include "defines.h"
+#include "gl_strings.h"
 
 #include <string>
 #include <queue>
@@ -68,5 +70,4 @@ namespace glmock
 		IErrorCallback* mErrorCallback;
 		ExceptionErrorCallback mDefaultErrorCallback;
 	};
-
 }

@@ -22,6 +22,7 @@
     <ClInclude Include="..\..\glmock\framework.h" />
     <ClInclude Include="..\..\glmock\glmock.h" />
     <ClInclude Include="..\..\glmock\gl_framework.h" />
+    <ClInclude Include="..\..\glmock\gl_strings.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glmock\command\glClear.cpp" />
@@ -74,7 +75,7 @@
     <ClCompile Include="..\..\glmock\command\glew\__glewUniform4fv.cpp" />
     <ClCompile Include="..\..\glmock\command\glew\__glewUniformMatrix4fv.cpp" />
     <ClCompile Include="..\..\glmock\command\glew\__glewUseProgram.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\__glewVertexAttribPointer.cpp" />
+    <ClCompile Include="..\..\glmock\command\glew\glVertexAttribPointer.cpp" />
     <ClCompile Include="..\..\glmock\command\glFlush.cpp" />
     <ClCompile Include="..\..\glmock\command\glFrontFace.cpp" />
     <ClCompile Include="..\..\glmock\command\glGenTextures.cpp" />
@@ -136,6 +137,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_DLL;EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4227</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>../../libraries/glew-1.9.0/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -155,6 +157,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_DLL;EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DisableSpecificWarnings>4227</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>../../libraries/glew-1.9.0/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

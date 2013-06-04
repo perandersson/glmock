@@ -50,6 +50,9 @@
     <ClInclude Include="..\..\glmock\command\glTexImage2D.h">
       <Filter>Source Files\command</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\glmock\gl_strings.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glmock\command\glTexParameteri.cpp">
@@ -184,9 +187,6 @@
     <ClCompile Include="..\..\glmock\command\glew\__glewShaderSource.cpp">
       <Filter>Source Files\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\__glewVertexAttribPointer.cpp">
-      <Filter>Source Files\command\glew</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\glmock\command\glew\__glewEnableVertexAttribArray.cpp">
       <Filter>Source Files\command\glew</Filter>
     </ClCompile>
@@ -240,6 +240,9 @@
     </ClCompile>
     <ClCompile Include="..\..\glmock\command\glTexImage2D.cpp">
       <Filter>Source Files\command</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\command\glew\glVertexAttribPointer.cpp">
+      <Filter>Source Files\command\glew</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

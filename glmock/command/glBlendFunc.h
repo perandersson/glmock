@@ -14,6 +14,9 @@ namespace glmock
 
 	public:
 		void Eval(GLenum sfactor, GLenum dfactor);
+		
+	private:
+		const char* AsString(GLenum value);
 
 	private:
 		GLenum mSFactor;

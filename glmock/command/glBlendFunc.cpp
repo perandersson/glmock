@@ -15,20 +15,45 @@ GLBlendFunc::~GLBlendFunc()
 void GLBlendFunc::Eval(GLenum sfactor, GLenum dfactor)
 {
 	if(sfactor != mSFactor) {
-		char expected[10] = {0};
-		char actual[10] = {0};
-		itoa(mSFactor, expected, 10);
-		itoa(sfactor, actual, 10);
+		const char* expected = AsString(mSFactor);
+		const char* actual = AsString(sfactor);
 		GLFramework::OnBadParameter(this, "sfactor", expected, actual);
 	}
 
 	if(dfactor != mDFactor) {
-		char expected[10] = {0};
-		char actual[10] = {0};
-		itoa(mDFactor, expected, 10);
-		itoa(dfactor, actual, 10);
+		const char* expected = AsString(mDFactor);
+		const char* actual = AsString(dfactor);
 		GLFramework::OnBadParameter(this, "dfactor", expected, actual);
 	}
+}
+
+const char* GLBlendFunc::AsString(GLenum value)
+{
+	const char* str = 0;
+	switch(value)
+	{
+	case GL_ZERO: str = AS_STRING(GL_ZERO); break;
+	case GL_ONE: str = AS_STRING(GL_ONE); break;
+	case GL_SRC_COLOR: str = AS_STRING(GL_SRC_COLOR); break;
+	case GL_ONE_MINUS_SRC_COLOR: str = AS_STRING(GL_ONE_MINUS_SRC_COLOR); break;
+	case GL_DST_COLOR: str = AS_STRING(GL_DST_COLOR); break;
+	case GL_ONE_MINUS_DST_COLOR: str = AS_STRING(GL_ONE_MINUS_DST_COLOR); break;
+	case GL_SRC_ALPHA: str = AS_STRING(GL_SRC_ALPHA); break;
+	case GL_ONE_MINUS_SRC_ALPHA: str = AS_STRING(GL_ONE_MINUS_SRC_ALPHA); break;
+	case GL_DST_ALPHA: str = AS_STRING(GL_DST_ALPHA); break;
+	case GL_ONE_MINUS_DST_ALPHA: str = AS_STRING(GL_ONE_MINUS_DST_ALPHA); break;
+	case GL_CONSTANT_COLOR: str = AS_STRING(GL_CONSTANT_COLOR); break;
+	case GL_ONE_MINUS_CONSTANT_COLOR: str = AS_STRING(GL_ONE_MINUS_CONSTANT_COLOR); break;
+	case GL_CONSTANT_ALPHA: str = AS_STRING(GL_CONSTANT_ALPHA); break;
+	case GL_ONE_MINUS_CONSTANT_ALPHA: str = AS_STRING(GL_ONE_MINUS_CONSTANT_ALPHA); break;
+	case GL_SRC_ALPHA_SATURATE: str = AS_STRING(GL_SRC_ALPHA_SATURATE); break;
+	case GL_SRC1_COLOR: str = AS_STRING(GL_SRC1_COLOR); break;
+	case GL_ONE_MINUS_SRC1_COLOR: str = AS_STRING(GL_ONE_MINUS_SRC1_COLOR); break;
+	case GL_SRC1_ALPHA: str = AS_STRING(GL_SRC1_ALPHA); break;
+	case GL_ONE_MINUS_SRC1_ALPHA: str = AS_STRING(GL_ONE_MINUS_SRC1_ALPHA); break;
+	default: str = AS_STRING(UNKNOWN); str = AS_STRING(UNKNOWN); break;
+	};
+	return str;
 }
 
 extern "C" {

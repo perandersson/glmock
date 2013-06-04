@@ -1,5 +1,7 @@
 #include "gl_framework.h"
 #include <sstream>
+#include <map>
+#include <string>
 using namespace glmock;
 
 ExceptionErrorCallback::ExceptionErrorCallback()
@@ -118,13 +120,3 @@ void GLFramework::OnBadParameter(const ICommand* command, const char* paramName,
 {
 	__instance->mErrorCallback->OnBadParameter(command, paramName, expected, actual);
 }
-
-/*
-void GLFramework::AddCommandError(ICommand* command, const char* error)
-{
-	CommandError cmderr;
-	strcpy_s(cmderr.Command, 50, typeid(*command).name());
-	strcpy_s(cmderr.Error, 128, error);
-	mErrors.push_back(cmderr);
-}
-*/

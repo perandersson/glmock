@@ -1,7 +1,6 @@
 #pragma once
 
 #include "command.h"
-#include "defines.h"
 #include "exception.h"
 
 // Commands
