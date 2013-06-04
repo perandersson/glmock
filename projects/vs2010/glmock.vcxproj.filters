@@ -202,25 +202,7 @@
     <ClCompile Include="..\..\glmock\command\glew\__glewGetActiveUniform.cpp">
       <Filter>Source Files\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\__glewUniform1i.cpp">
-      <Filter>Source Files\command\glew</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\__glewUniformMatrix4fv.cpp">
-      <Filter>Source Files\command\glew</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\glmock\command\glew\__glewUniform1fv.cpp">
-      <Filter>Source Files\command\glew</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\__glewUniform3iv.cpp">
-      <Filter>Source Files\command\glew</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\__glewUniform4fv.cpp">
-      <Filter>Source Files\command\glew</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\__glewUniform3fv.cpp">
-      <Filter>Source Files\command\glew</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\__glewUniform2fv.cpp">
       <Filter>Source Files\command\glew</Filter>
     </ClCompile>
     <ClCompile Include="..\..\glmock\command\glDrawArrays.cpp">
@@ -242,6 +224,24 @@
       <Filter>Source Files\command\glew</Filter>
     </ClCompile>
     <ClCompile Include="..\..\glmock\command\glew\glUseProgram.cpp">
+      <Filter>Source Files\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\command\glew\glUniformMatrix4fv.cpp">
+      <Filter>Source Files\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\command\glew\glUniform4fv.cpp">
+      <Filter>Source Files\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\command\glew\glUniform2fv.cpp">
+      <Filter>Source Files\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\command\glew\glUniform3fv.cpp">
+      <Filter>Source Files\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\command\glew\glUniform3iv.cpp">
+      <Filter>Source Files\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\command\glew\glUniform1i.cpp">
       <Filter>Source Files\command\glew</Filter>
     </ClCompile>
   </ItemGroup>
