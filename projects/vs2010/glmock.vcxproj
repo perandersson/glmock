@@ -12,83 +12,83 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\glmock\command.h" />
-    <ClInclude Include="..\..\glmock\command\glBindTexture.h" />
-    <ClInclude Include="..\..\glmock\command\glBlendFunc.h" />
-    <ClInclude Include="..\..\glmock\command\glDeleteTextures.h" />
-    <ClInclude Include="..\..\glmock\command\glew\glUseProgram.h" />
-    <ClInclude Include="..\..\glmock\command\glGetError.h" />
-    <ClInclude Include="..\..\glmock\command\glTexImage2D.h" />
     <ClInclude Include="..\..\glmock\defines.h" />
     <ClInclude Include="..\..\glmock\exception.h" />
     <ClInclude Include="..\..\glmock\framework.h" />
     <ClInclude Include="..\..\glmock\glmock.h" />
-    <ClInclude Include="..\..\glmock\gl_framework.h" />
-    <ClInclude Include="..\..\glmock\gl_strings.h" />
+    <ClInclude Include="..\..\glmock\impl\command\glBindTexture.h" />
+    <ClInclude Include="..\..\glmock\impl\command\glBlendFunc.h" />
+    <ClInclude Include="..\..\glmock\impl\command\glDeleteTextures.h" />
+    <ClInclude Include="..\..\glmock\impl\command\glew\glUseProgram.h" />
+    <ClInclude Include="..\..\glmock\impl\command\glGetError.h" />
+    <ClInclude Include="..\..\glmock\impl\command\glTexImage2D.h" />
+    <ClInclude Include="..\..\glmock\impl\gl_framework.h" />
+    <ClInclude Include="..\..\glmock\impl\gl_strings.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\glmock\command\glClear.cpp" />
-    <ClCompile Include="..\..\glmock\command\glDrawArrays.cpp" />
-    <ClCompile Include="..\..\glmock\command\glDrawElements.cpp" />
-    <ClCompile Include="..\..\glmock\command\glBindTexture.cpp" />
-    <ClCompile Include="..\..\glmock\command\glBlendFunc.cpp" />
-    <ClCompile Include="..\..\glmock\command\glClearColor.cpp" />
-    <ClCompile Include="..\..\glmock\command\glClearDepth.cpp" />
-    <ClCompile Include="..\..\glmock\command\glCullFace.cpp" />
-    <ClCompile Include="..\..\glmock\command\glDeleteTextures.cpp" />
-    <ClCompile Include="..\..\glmock\command\glDepthFunc.cpp" />
-    <ClCompile Include="..\..\glmock\command\glDisable.cpp" />
-    <ClCompile Include="..\..\glmock\command\glEnable.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glActiveTexture.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glAttachShader.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glBindBuffer.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glBindFramebuffer.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glBindVertexArray.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glBufferData.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glCheckFramebufferStatus.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glCompileShader.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glCreateProgram.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glCreateShader.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glDeleteBuffers.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glDeleteFramebuffers.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glDeleteProgram.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glDeleteShader.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glDeleteVertexArrays.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glDetachShader.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glDrawBuffers.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glEnableVertexAttribArray.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glFramebufferTexture2D.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glGenBuffers.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glGenFramebuffers.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glGenVertexArrays.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glGetActiveUniform.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glGetProgramInfoLog.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glGetProgramiv.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glGetShaderInfoLog.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glGetShaderiv.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glGetUniformLocation.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glLinkProgram.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glShaderSource.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glUniform1fv.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glUniform1i.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glUniform2fv.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glUniform3fv.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glUniform3iv.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glUniform4fv.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glUniformMatrix4fv.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glUseProgram.cpp" />
-    <ClCompile Include="..\..\glmock\command\glew\glVertexAttribPointer.cpp" />
-    <ClCompile Include="..\..\glmock\command\glFlush.cpp" />
-    <ClCompile Include="..\..\glmock\command\glFrontFace.cpp" />
-    <ClCompile Include="..\..\glmock\command\glGenTextures.cpp" />
-    <ClCompile Include="..\..\glmock\command\glGetError.cpp" />
-    <ClCompile Include="..\..\glmock\command\glGetIntegerv.cpp" />
-    <ClCompile Include="..\..\glmock\command\glGetString.cpp" />
-    <ClCompile Include="..\..\glmock\command\glTexImage2D.cpp" />
-    <ClCompile Include="..\..\glmock\command\glTexParameteri.cpp" />
-    <ClCompile Include="..\..\glmock\command\glViewport.cpp" />
     <ClCompile Include="..\..\glmock\exception.cpp" />
     <ClCompile Include="..\..\glmock\framework.cpp" />
-    <ClCompile Include="..\..\glmock\gl_framework.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glBindTexture.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glBlendFunc.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glClear.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glClearColor.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glClearDepth.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glCullFace.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glDeleteTextures.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glDepthFunc.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glDisable.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glDrawArrays.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glDrawElements.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glEnable.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glActiveTexture.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glAttachShader.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glBindBuffer.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glBindFramebuffer.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glBindVertexArray.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glBufferData.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glCheckFramebufferStatus.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glCompileShader.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glCreateProgram.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glCreateShader.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDeleteBuffers.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDeleteFramebuffers.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDeleteProgram.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDeleteShader.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDeleteVertexArrays.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDetachShader.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDrawBuffers.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glEnableVertexAttribArray.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glFramebufferTexture2D.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGenBuffers.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGenFramebuffers.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGenVertexArrays.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetActiveUniform.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetProgramInfoLog.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetProgramiv.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetShaderInfoLog.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetShaderiv.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetUniformLocation.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glLinkProgram.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glShaderSource.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform1fv.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform1i.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform2fv.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform3fv.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform3iv.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform4fv.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniformMatrix4fv.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUseProgram.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glVertexAttribPointer.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glFlush.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glFrontFace.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glGenTextures.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glGetError.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glGetIntegerv.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glGetString.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glTexImage2D.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glTexParameteri.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glViewport.cpp" />
+    <ClCompile Include="..\..\glmock\impl\gl_framework.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C5C88D14-117C-4B4C-8721-F0720DC6BF75}</ProjectGuid>
@@ -137,7 +137,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_DLL;EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DisableSpecificWarnings>4227</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4227;4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>../../libraries/glew-1.9.0/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -157,7 +157,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_DLL;EXPORT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <DisableSpecificWarnings>4227</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4227;4996</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>../../libraries/glew-1.9.0/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>

@@ -9,22 +9,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\command">
-      <UniqueIdentifier>{97c350a2-30d3-4243-81f7-9c3703b0d7cf}</UniqueIdentifier>
+    <Filter Include="Source Files\impl">
+      <UniqueIdentifier>{27dc479b-dfff-4f19-a39d-45581b9a262c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\command\glew">
-      <UniqueIdentifier>{c725f23a-2f40-4ed9-8df6-70c14ab4f7c3}</UniqueIdentifier>
+    <Filter Include="Source Files\impl\command">
+      <UniqueIdentifier>{cbbd6883-e7e1-40a6-8221-8d7f556ba7b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\impl\command\glew">
+      <UniqueIdentifier>{a95eb3f7-cd6f-448f-8322-edbd0db93738}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\glmock\command.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\glmock\defines.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\glmock\command\glDeleteTextures.h">
-      <Filter>Source Files\command</Filter>
     </ClInclude>
     <ClInclude Include="..\..\glmock\exception.h">
       <Filter>Source Files</Filter>
@@ -35,217 +32,223 @@
     <ClInclude Include="..\..\glmock\glmock.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\glmock\gl_framework.h">
+    <ClInclude Include="..\..\glmock\impl\gl_strings.h">
+      <Filter>Source Files\impl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\glmock\defines.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\glmock\command\glGetError.h">
-      <Filter>Source Files\command</Filter>
+    <ClInclude Include="..\..\glmock\impl\command\glBindTexture.h">
+      <Filter>Source Files\impl\command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\glmock\command\glBindTexture.h">
-      <Filter>Source Files\command</Filter>
+    <ClInclude Include="..\..\glmock\impl\command\glBlendFunc.h">
+      <Filter>Source Files\impl\command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\glmock\command\glBlendFunc.h">
-      <Filter>Source Files\command</Filter>
+    <ClInclude Include="..\..\glmock\impl\command\glDeleteTextures.h">
+      <Filter>Source Files\impl\command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\glmock\command\glTexImage2D.h">
-      <Filter>Source Files\command</Filter>
+    <ClInclude Include="..\..\glmock\impl\command\glGetError.h">
+      <Filter>Source Files\impl\command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\glmock\gl_strings.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="..\..\glmock\impl\command\glTexImage2D.h">
+      <Filter>Source Files\impl\command</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\glmock\command\glew\glUseProgram.h">
-      <Filter>Source Files\command\glew</Filter>
+    <ClInclude Include="..\..\glmock\impl\command\glew\glUseProgram.h">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\glmock\impl\gl_framework.h">
+      <Filter>Source Files\impl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\glmock\command\glTexParameteri.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glGetError.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glGenTextures.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glFlush.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glDeleteTextures.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glBindTexture.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glCullFace.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glFrontFace.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glBlendFunc.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glDisable.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glEnable.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glDepthFunc.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glClearDepth.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glClearColor.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glGetString.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glGetIntegerv.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glViewport.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glClear.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glDrawElements.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glDrawArrays.cpp">
-      <Filter>Source Files\command</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\glmock\exception.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\glmock\framework.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\gl_framework.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glBindTexture.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glTexImage2D.cpp">
-      <Filter>Source Files\command</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glBlendFunc.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glVertexAttribPointer.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glClear.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glUseProgram.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glClearColor.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glUniformMatrix4fv.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glClearDepth.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glUniform4fv.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glCullFace.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glUniform2fv.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glDeleteTextures.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glUniform3fv.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glDepthFunc.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glUniform3iv.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glDisable.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glUniform1i.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glDrawArrays.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glUniform1fv.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glDrawElements.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glShaderSource.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glEnable.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glLinkProgram.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glFlush.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glGetUniformLocation.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glFrontFace.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glGetShaderiv.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glGenTextures.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glGetShaderInfoLog.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glGetError.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glGetProgramiv.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glGetIntegerv.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glGetProgramInfoLog.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glGetString.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glGetActiveUniform.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glTexImage2D.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glGenVertexArrays.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glTexParameteri.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glGenFramebuffers.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glViewport.cpp">
+      <Filter>Source Files\impl\command</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glGenBuffers.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glActiveTexture.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glFramebufferTexture2D.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glAttachShader.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glEnableVertexAttribArray.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glBindBuffer.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glDrawBuffers.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glBindFramebuffer.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glDetachShader.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glBindVertexArray.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glDeleteVertexArrays.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glBufferData.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glDeleteShader.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glCheckFramebufferStatus.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glDeleteProgram.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glCompileShader.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glDeleteFramebuffers.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glCreateProgram.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glDeleteBuffers.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glCreateShader.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glCreateShader.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDeleteBuffers.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glCreateProgram.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDeleteFramebuffers.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glCompileShader.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDeleteProgram.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glCheckFramebufferStatus.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDeleteShader.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glBufferData.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDeleteVertexArrays.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glBindVertexArray.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDetachShader.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glBindFramebuffer.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glDrawBuffers.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glBindBuffer.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glEnableVertexAttribArray.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glAttachShader.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glFramebufferTexture2D.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\glmock\command\glew\glActiveTexture.cpp">
-      <Filter>Source Files\command\glew</Filter>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGenBuffers.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGenFramebuffers.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGenVertexArrays.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetActiveUniform.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetProgramInfoLog.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetProgramiv.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetShaderInfoLog.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetShaderiv.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glGetUniformLocation.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glLinkProgram.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glShaderSource.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform1fv.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform1i.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform2fv.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform3fv.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform3iv.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniform4fv.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUniformMatrix4fv.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glUseProgram.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\command\glew\glVertexAttribPointer.cpp">
+      <Filter>Source Files\impl\command\glew</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\glmock\impl\gl_framework.cpp">
+      <Filter>Source Files\impl</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

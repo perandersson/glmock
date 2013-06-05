@@ -1,8 +1,0 @@
-#include "../glmock.h"
-#include "../gl_framework.h"
-using namespace glmock;
-
-extern "C" {
-	DLL_EXPORT void CALL_CONV glGenTextures(GLsizei n, GLuint* textures) {
-	}
-}

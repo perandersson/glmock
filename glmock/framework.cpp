@@ -1,5 +1,5 @@
 #include "framework.h"
-#include "gl_framework.h"
+#include "impl/gl_framework.h"
 
 namespace glmock
 {
