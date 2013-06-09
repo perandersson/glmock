@@ -11,12 +11,9 @@ namespace glmock
 	public:
 		GLBindTexture(GLenum target, GLuint texture);
 		virtual ~GLBindTexture();
-
+		
 	public:
 		void Eval(GLenum target, GLuint texture);
-
-	private:
-		const char* AsString(GLenum value);
 
 	private:
 		GLenum mTarget;

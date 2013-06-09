@@ -1,6 +1,7 @@
 #include "gl_framework.h"
 #include <sstream>
 #include <map>
+#include <sstream>
 #include <string>
 
 #include "command/glDeleteTextures.h"
@@ -157,4 +158,24 @@ void GLFramework::AddBadParameter(const ICommand* command, const char* paramName
 void GLFramework::AddBadFunctionCalled(const ICommand* command, const char* expected)
 {
 	__instance->mErrorCallback->OnBadFunctionCalled(command, expected);
+}
+
+namespace glmock {
+	std::string IntToString(GLint val) {
+		std::stringstream ss;
+		ss << val;
+		return ss.str();
+	}
+	
+	std::string FloatToString(GLfloat val) {
+		std::stringstream ss;
+		ss << val;
+		return ss.str();
+	}
+
+	std::string DoubleToString(GLdouble val) {
+		std::stringstream ss;
+		ss << val;
+		return ss.str();
+	}
 }

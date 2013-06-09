@@ -18,22 +18,40 @@ void GLTexImage2D::Eval(GLenum target, GLint level, GLint internalformat, GLsize
 	GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
 {
 	if(mTarget = target) {
-		char expected[10] = {0};
-		char actual[10] = {0};
-		itoa(mTarget, expected, 10);
-		itoa(target, actual, 10);
-		GLFramework::AddBadParameter(this, "target", expected, actual);
+		GLFramework::AddBadParameter(this, "target", EnumToString(GL_TEX_IMAGE_2D, mTarget), EnumToString(GL_TEX_IMAGE_2D, target));
 	}
 
 	if(mLevel = level) {
-		char expected[10] = {0};
-		char actual[10] = {0};
-		itoa(mLevel, expected, 10);
-		itoa(level, actual, 10);
-		GLFramework::AddBadParameter(this, "level", expected, actual);
+		GLFramework::AddBadParameter(this, "level", IntToString(mLevel).c_str(), IntToString(level).c_str());
 	}
 
-	// TODO Add more here!!
+	if(mInternalFormat != internalformat) {
+		GLFramework::AddBadParameter(this, "internalformat", IntToString(mInternalFormat).c_str(), IntToString(internalformat).c_str());
+	}
+	
+	if(mWidth != width) {
+		GLFramework::AddBadParameter(this, "width", IntToString(mWidth).c_str(), IntToString(width).c_str());
+	}
+	
+	if(mHeight != height) {
+		GLFramework::AddBadParameter(this, "height", IntToString(mHeight).c_str(), IntToString(height).c_str());
+	}
+	
+	if(mBorder != border) {
+		GLFramework::AddBadParameter(this, "border", IntToString(mBorder).c_str(), IntToString(border).c_str());
+	}
+
+	if(mBorder != border) {
+		GLFramework::AddBadParameter(this, "border", IntToString(mBorder).c_str(), IntToString(border).c_str());
+	}
+	
+	if(mFormat = format) {
+		GLFramework::AddBadParameter(this, "format", EnumToString(GL_TEX_IMAGE_2D, mFormat), EnumToString(GL_TEX_IMAGE_2D, format));
+	}
+	
+	if(mType = type) {
+		GLFramework::AddBadParameter(this, "type", EnumToString(GL_TEX_IMAGE_2D, mType), EnumToString(GL_TEX_IMAGE_2D, type));
+	}
 }
 
 extern "C" {

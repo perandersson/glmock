@@ -10,5 +10,6 @@ namespace glmock
 	{
 	public:
 		virtual ~ICommand() {}
+
 	};
 }

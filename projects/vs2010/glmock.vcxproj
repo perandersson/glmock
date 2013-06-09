@@ -89,6 +89,7 @@
     <ClCompile Include="..\..\glmock\impl\command\glTexParameteri.cpp" />
     <ClCompile Include="..\..\glmock\impl\command\glViewport.cpp" />
     <ClCompile Include="..\..\glmock\impl\gl_framework.cpp" />
+    <ClCompile Include="..\..\glmock\impl\gl_strings.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C5C88D14-117C-4B4C-8721-F0720DC6BF75}</ProjectGuid>

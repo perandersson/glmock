@@ -97,4 +97,8 @@ namespace glmock
 		IErrorCallback* mErrorCallback;
 		ExceptionErrorCallback mDefaultErrorCallback;
 	};
+
+	extern std::string IntToString(GLint val);
+	extern std::string FloatToString(GLfloat val);
+	extern std::string DoubleToString(GLdouble val);
 }
