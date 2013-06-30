@@ -57,7 +57,7 @@ namespace glmock
 		
 		//
 		// Add an error for when a bad parameter was supplied to a function
-		static void AddBadParameter(const ICommand* command, const char* paramName, const char* expected, const char* actual);
+		static void AddBadParameter(const ICommand* command, const char* paramName, std::string expected, std::string actual);
 
 		//
 		// Add an error if a bad/invalid function was called.
@@ -66,13 +66,15 @@ namespace glmock
 	// IFramework
 	public:
 		virtual void RegisterErrorCallback(IErrorCallback* calback);
-
 		virtual void glDeleteTextures(GLsizei n, const GLuint* textures);
 		virtual void glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, 
 			GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels);
 		virtual void glBindTexture(GLenum target, GLuint texture);
 		virtual void glBlendFunc(GLenum sfactor, GLenum dfactor);
 		virtual IReturns<GLenum>* glGetError();
+		virtual void glGenTextures(GLsizei n, GLuint* textures);
+		virtual void glFlush();
+
 		virtual void glUseProgram(GLuint program);
 
 	public:

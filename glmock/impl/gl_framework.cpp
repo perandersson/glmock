@@ -9,6 +9,9 @@
 #include "command/glTexImage2D.h"
 #include "command/glBlendFunc.h"
 #include "command/glGetError.h"
+#include "command/glGenTextures.h"
+#include "command/glFlush.h"
+
 #include "command/glew/glUseProgram.h"
 using namespace glmock;
 
@@ -127,6 +130,18 @@ IReturns<GLenum>* GLFramework::glGetError()
 	return command;
 }
 
+void GLFramework::glGenTextures(GLsizei n, GLuint* textures)
+{
+	GLGenTextures* command = new GLGenTextures(n, textures);
+	mCommands.push(command);
+}
+
+void GLFramework::glFlush()
+{
+	GLFlush* command = new GLFlush();
+	mCommands.push(command);
+}
+
 void GLFramework::glBlendFunc(GLenum sfactor, GLenum dfactor)
 {
 	GLBlendFunc* command = new GLBlendFunc(sfactor, dfactor);
@@ -150,9 +165,9 @@ ICommand* GLFramework::TryGet()
 	return cmd;
 }
 
-void GLFramework::AddBadParameter(const ICommand* command, const char* paramName, const char* expected, const char* actual)
+void GLFramework::AddBadParameter(const ICommand* command, const char* paramName, std::string expected, std::string actual)
 {
-	__instance->mErrorCallback->OnBadParameter(command, paramName, expected, actual);
+	__instance->mErrorCallback->OnBadParameter(command, paramName, expected.c_str(), actual.c_str());
 }
 
 void GLFramework::AddBadFunctionCalled(const ICommand* command, const char* expected)

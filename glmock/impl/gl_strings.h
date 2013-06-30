@@ -81,13 +81,4 @@ namespace glmock
 	// UNKNOWN
 
 	STRINGIFY(UNKNOWN);
-
-	enum FuncTypes {
-		GL_BIND_TEXTURE,
-		GL_TEX_IMAGE_2D
-	};
-
-	//
-	// Converts the supplied enum value into a string.
-	const char* EnumToString(FuncTypes func, GLenum value);
 }

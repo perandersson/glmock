@@ -61,20 +61,15 @@ namespace glmock
 		virtual void RegisterErrorCallback(IErrorCallback* callback) = 0;
 
 	public:
-		// OpenGL 1.0
-
-		// OpenGL 2.0
-
-		// OpenGL 3.0
-
-		// OpenGL 3.3
-
 		virtual void glDeleteTextures(GLsizei n, const GLuint* textures) = 0;
 		virtual void glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, 
 			GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels) = 0;
 		virtual void glBindTexture(GLenum target, GLuint texture) = 0;
 		virtual void glBlendFunc(GLenum sfactor, GLenum dfactor) = 0;
 		virtual IReturns<GLenum>* glGetError() = 0;
+		virtual void glGenTextures(GLsizei n, GLuint* textures) = 0;
+		virtual void glFlush() = 0;
+
 		virtual void glUseProgram(GLuint program) = 0;
 	};
 
@@ -90,5 +85,4 @@ namespace glmock
 	// @remark This method will only throw the defined exception above if you use the default error handler. If you override the
 	//	error listener then you are responsible for any errors that occured durin the execution time.
 	extern DLL_EXPORT void Destroy(IFramework* framework);
-
 }

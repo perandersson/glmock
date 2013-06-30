@@ -59,6 +59,12 @@
     <ClInclude Include="..\..\glmock\impl\gl_framework.h">
       <Filter>Source Files\impl</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\glmock\impl\command\glGenTextures.h">
+      <Filter>Source Files\impl\command</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\glmock\impl\command\glFlush.h">
+      <Filter>Source Files\impl\command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\glmock\exception.cpp">

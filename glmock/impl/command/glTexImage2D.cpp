@@ -18,39 +18,39 @@ void GLTexImage2D::Eval(GLenum target, GLint level, GLint internalformat, GLsize
 	GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels)
 {
 	if(mTarget = target) {
-		GLFramework::AddBadParameter(this, "target", EnumToString(GL_TEX_IMAGE_2D, mTarget), EnumToString(GL_TEX_IMAGE_2D, target));
+		GLFramework::AddBadParameter(this, "target", EnumToString(mTarget), EnumToString(target));
 	}
 
 	if(mLevel = level) {
-		GLFramework::AddBadParameter(this, "level", IntToString(mLevel).c_str(), IntToString(level).c_str());
+		GLFramework::AddBadParameter(this, "level", IntToString(mLevel), IntToString(level));
 	}
 
 	if(mInternalFormat != internalformat) {
-		GLFramework::AddBadParameter(this, "internalformat", IntToString(mInternalFormat).c_str(), IntToString(internalformat).c_str());
+		GLFramework::AddBadParameter(this, "internalformat", IntToString(mInternalFormat), IntToString(internalformat));
 	}
 	
 	if(mWidth != width) {
-		GLFramework::AddBadParameter(this, "width", IntToString(mWidth).c_str(), IntToString(width).c_str());
+		GLFramework::AddBadParameter(this, "width", IntToString(mWidth), IntToString(width));
 	}
 	
 	if(mHeight != height) {
-		GLFramework::AddBadParameter(this, "height", IntToString(mHeight).c_str(), IntToString(height).c_str());
+		GLFramework::AddBadParameter(this, "height", IntToString(mHeight), IntToString(height));
 	}
 	
 	if(mBorder != border) {
-		GLFramework::AddBadParameter(this, "border", IntToString(mBorder).c_str(), IntToString(border).c_str());
+		GLFramework::AddBadParameter(this, "border", IntToString(mBorder), IntToString(border));
 	}
 
 	if(mBorder != border) {
-		GLFramework::AddBadParameter(this, "border", IntToString(mBorder).c_str(), IntToString(border).c_str());
+		GLFramework::AddBadParameter(this, "border", IntToString(mBorder), IntToString(border));
 	}
 	
 	if(mFormat = format) {
-		GLFramework::AddBadParameter(this, "format", EnumToString(GL_TEX_IMAGE_2D, mFormat), EnumToString(GL_TEX_IMAGE_2D, format));
+		GLFramework::AddBadParameter(this, "format", EnumToString(mFormat), EnumToString(format));
 	}
 	
 	if(mType = type) {
-		GLFramework::AddBadParameter(this, "type", EnumToString(GL_TEX_IMAGE_2D, mType), EnumToString(GL_TEX_IMAGE_2D, type));
+		GLFramework::AddBadParameter(this, "type", EnumToString(mType), EnumToString(type));
 	}
 }
 
