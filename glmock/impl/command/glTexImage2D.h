@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../command.h"
+#include "../gl_command.h"
 #include "../gl_strings.h"
 
 namespace glmock
 {
 	//
 	// http://www.opengl.org/sdk/docs/man3/xhtml/glTexImage2D.xml
-	class GLTexImage2D : public ICommand
+	class GLTexImage2D : public GLCommand
 	{
 	public:
 		GLTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, 
@@ -44,6 +44,10 @@ namespace glmock
 			case GL_BGR: str = AS_STRING(GL_BGR); break;
 			case GL_RGBA: str = AS_STRING(GL_RGBA); break;
 			case GL_BGRA: str = AS_STRING(GL_BGRA); break;
+
+			case GL_TEXTURE_1D: str = AS_STRING(GL_TEXTURE_1D); break;
+			case GL_TEXTURE_2D: str = AS_STRING(GL_TEXTURE_2D); break;
+			case GL_TEXTURE_3D: str = AS_STRING(GL_TEXTURE_3D); break;
 
 			default: str = AS_STRING(UNKNOWN); str = AS_STRING(UNKNOWN); break;
 			};

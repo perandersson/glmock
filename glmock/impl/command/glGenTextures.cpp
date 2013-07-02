@@ -3,7 +3,7 @@
 using namespace glmock;
 
 GLGenTextures::GLGenTextures(GLsizei n, GLuint* textures)
-	: mN(n), mTextures(textures)
+	: GLCommand("glGenTextures"), mN(n), mTextures(textures)
 {
 }
 
@@ -14,7 +14,7 @@ GLGenTextures::~GLGenTextures()
 void GLGenTextures::Eval(GLsizei n, GLuint* textures)
 {
 	if(mN != n) {
-		GLFramework::AddBadParameter(this, "n", IntToString(mN), IntToString(n));
+		GLFramework::AddBadParameter(this->Name, "n", IntToString(mN), IntToString(n));
 	} else {
 		for(GLsizei i = 0; i < n; ++i) {
 			textures[i] = mTextures[i];
@@ -24,7 +24,7 @@ void GLGenTextures::Eval(GLsizei n, GLuint* textures)
 
 extern "C" {
 	DLL_EXPORT void CALL_CONV glGenTextures(GLsizei n, GLuint* textures) {
-		GLGenTextures* command = GLFramework::CastAndGet<GLGenTextures>();
+		GLGenTextures* command = GLFramework::CastAndGet<GLGenTextures>("glGenTextures");
 		if(command != NULL) {
 			command->Eval(n, textures);
 			delete command;

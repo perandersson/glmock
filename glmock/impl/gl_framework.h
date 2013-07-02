@@ -3,6 +3,7 @@
 #include "../framework.h"
 #include "../defines.h"
 #include "gl_strings.h"
+#include "gl_command.h"
 
 #include <string>
 #include <queue>
@@ -24,24 +25,6 @@ namespace glmock
 		unsigned int mCount;
 	};
 
-	//
-	// The default error callback listener. This will cause the exception {@code glmock::IMockException} to be thrown
-	// with the complete information regarding all the errors if any error where raised.
-	class ExceptionErrorCallback : public IErrorCallback
-	{
-	public:
-		ExceptionErrorCallback();
-		virtual ~ExceptionErrorCallback();
-
-	public:
-		virtual void OnCommandNotCalled(const ICommand* command);
-		virtual void OnBadParameter(const ICommand* command, const char* name, const char* expected, const char* actual);
-		virtual void OnBadFunctionCalled(const ICommand* command, const char* actual);
-
-	private:
-		std::vector<CommandError> mErrors;
-	};
-
 	class GLFramework : public IFramework
 	{
 	private:
@@ -49,23 +32,27 @@ namespace glmock
 		
 		//
 		// @return The next command in the prediction queue; NULL if no commands are available.
-		static ICommand* TryGet();
+		static GLCommand* TryGet();
 		
 	public:
-		GLFramework();
+		GLFramework(IErrorCallback* calback);
 		~GLFramework();
 		
 		//
 		// Add an error for when a bad parameter was supplied to a function
-		static void AddBadParameter(const ICommand* command, const char* paramName, std::string expected, std::string actual);
+		static void AddBadParameter(const char* function, const char* paramName, std::string expected, std::string actual);
 
 		//
 		// Add an error if a bad/invalid function was called.
-		static void AddBadFunctionCalled(const ICommand* command, const char* expected);
+		static void AddBadFunctionCalled(const char* expected, const char* actual);
+		
+		//
+		// Add an error if a bad/invalid function was called.
+		static void AddUnspecifiedFunctionCalled(const char* expected);
 
 	// IFramework
 	public:
-		virtual void RegisterErrorCallback(IErrorCallback* calback);
+		virtual void glGetIntegerv(GLenum pname, GLint* params);
 		virtual void glDeleteTextures(GLsizei n, const GLuint* textures);
 		virtual void glTexImage2D(GLenum target, GLint level, GLint internalformat, GLsizei width, 
 			GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels);
@@ -81,11 +68,16 @@ namespace glmock
 		//
 		// Retrieves the element at the top of the queue
 		template<class T>
-		static T* CastAndGet() {
-			ICommand* cmd = TryGet();
+		static T* CastAndGet(const char* expected) {
+			GLCommand* cmd = TryGet();
+			if(cmd == 0) {
+				AddUnspecifiedFunctionCalled(expected);
+				return 0;
+			}
+
 			T* casted = dynamic_cast<T*>(cmd);
 			if(casted == 0) {
-				AddBadFunctionCalled(cmd, typeid(T).name());
+				AddBadFunctionCalled(expected, cmd->Name);
 				if(cmd != 0)
 					delete cmd;
 			}
@@ -95,9 +87,8 @@ namespace glmock
 		
 
 	private:
-		std::queue<ICommand*> mCommands;
+		std::queue<GLCommand*> mCommands;
 		IErrorCallback* mErrorCallback;
-		ExceptionErrorCallback mDefaultErrorCallback;
 	};
 
 	extern std::string IntToString(GLint val);

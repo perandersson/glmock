@@ -1,9 +1,9 @@
 #include "gl_framework.h"
 #include <sstream>
 #include <map>
-#include <sstream>
 #include <string>
 
+#include "command/glGetIntegerv.h"
 #include "command/glDeleteTextures.h"
 #include "command/glBindTexture.h"
 #include "command/glTexImage2D.h"
@@ -25,60 +25,9 @@ ValidationException::~ValidationException()
 	delete mErrors;
 }
 
-
-///////////////////////////////////////////////////////////////////
-
-ExceptionErrorCallback::ExceptionErrorCallback()
-{
-}
-
-ExceptionErrorCallback::~ExceptionErrorCallback()
-{
-	if(!mErrors.empty()) {
-		CommandError* errors = new CommandError[mErrors.size()];
-		for(size_t i = 0; i < mErrors.size(); ++i) {
-			memcpy(&errors[i], &mErrors[i], sizeof(CommandError));
-		}
-
-		throw ValidationException(errors, mErrors.size());
-	}
-}
-
-void ExceptionErrorCallback::OnCommandNotCalled(const ICommand* command)
-{
-	CommandError cmd;
-	strcpy_s(cmd.Command, 50, typeid(*command).name());
-	strcpy_s(cmd.Error, 128, "Command not called");
-	mErrors.push_back(cmd);
-}
-
-void ExceptionErrorCallback::OnBadParameter(const ICommand* command, const char* name, const char* expected, const char* actual)
-{
-	std::stringstream ss;
-	ss << "Fuction: " << name << " was called with the wrong parameters. Expected: " << expected << " but was: " << actual;
-
-	CommandError cmd;
-	strcpy_s(cmd.Command, 50, typeid(*command).name());
-	strcpy_s(cmd.Error, 128, ss.str().c_str());
-	mErrors.push_back(cmd);
-}
-
-void ExceptionErrorCallback::OnBadFunctionCalled(const ICommand* command, const char* actual)
-{
-	std::stringstream ss;
-	ss << "Expected function: " << typeid(*command).name() << " but was: " << actual;
-
-	CommandError cmd;
-	strcpy_s(cmd.Command, 50, typeid(*command).name());
-	strcpy_s(cmd.Error, 128, ss.str().c_str());
-	mErrors.push_back(cmd);
-}
-
-///////////////////////////////////////////////////////////////////
-
 GLFramework* __instance = 0;
-GLFramework::GLFramework()
-	: mErrorCallback(&mDefaultErrorCallback)
+GLFramework::GLFramework(IErrorCallback* calback)
+	: mErrorCallback(calback)
 {
 	__instance = this;
 }
@@ -89,19 +38,19 @@ GLFramework::~GLFramework()
 	if(mCommands.size() > 0) {
 		// Not all commands where invoked!!!
 		while(!mCommands.empty()) {
-			ICommand* cmd = mCommands.front();
-			mErrorCallback->OnCommandNotCalled(cmd);
+			GLCommand* cmd = mCommands.front();
+			mErrorCallback->OnFunctionNotCalled(cmd->Name);
 			mCommands.pop();
 		}
 	}
+
+	delete mErrorCallback;
 }
 
-void GLFramework::RegisterErrorCallback(IErrorCallback* callback)
+void GLFramework::glGetIntegerv(GLenum pname, GLint* params)
 {
-	if(callback != NULL)
-		mErrorCallback = callback;
-	else
-		mErrorCallback = &mDefaultErrorCallback;
+	GLGetIntegerv* command = new GLGetIntegerv(pname, params);
+	mCommands.push(command);
 }
 
 void GLFramework::glDeleteTextures(GLsizei n, const GLuint* textures)
@@ -154,25 +103,34 @@ void GLFramework::glUseProgram(GLuint program)
 	mCommands.push(command);
 }
 
-ICommand* GLFramework::TryGet()
+GLCommand* GLFramework::TryGet()
 {
-	std::queue<ICommand*>& commands = __instance->mCommands;
+	if(__instance == NULL) {
+		throw new MockEngineNotInitializedException();
+	}
+
+	std::queue<GLCommand*>& commands = __instance->mCommands;
 	if(commands.empty())
 		return NULL;
 
-	ICommand* cmd = commands.front();
+	GLCommand* cmd = commands.front();
 	commands.pop();
 	return cmd;
 }
 
-void GLFramework::AddBadParameter(const ICommand* command, const char* paramName, std::string expected, std::string actual)
+void GLFramework::AddBadParameter(const char* function, const char* paramName, std::string expected, std::string actual)
 {
-	__instance->mErrorCallback->OnBadParameter(command, paramName, expected.c_str(), actual.c_str());
+	__instance->mErrorCallback->OnBadParameter(function, paramName, expected.c_str(), actual.c_str());
 }
 
-void GLFramework::AddBadFunctionCalled(const ICommand* command, const char* expected)
+void GLFramework::AddBadFunctionCalled(const char* expected, const char* actual)
 {
-	__instance->mErrorCallback->OnBadFunctionCalled(command, expected);
+	__instance->mErrorCallback->OnBadFunctionCalled(expected, actual);
+}
+
+void GLFramework::AddUnspecifiedFunctionCalled(const char* expected)
+{
+	__instance->mErrorCallback->OnUnspecifiedFunctionCalled(expected);
 }
 
 namespace glmock {

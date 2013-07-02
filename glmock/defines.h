@@ -10,7 +10,9 @@
 
 #ifdef EXPORT_DLL
 	#ifdef WIN32
+	#include <Windows.h>
 	#define DLL_EXPORT __declspec(dllexport)
+	#undef WINGDIAPI
 	#define WINGDIAPI DLL_EXPORT
 	#endif
 
@@ -20,3 +22,6 @@
 #endif
 
 #include <gl/glew.h>
+#ifdef WIN32
+#include <gl/wglew.h>
+#endif

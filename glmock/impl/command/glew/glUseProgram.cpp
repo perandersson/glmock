@@ -3,7 +3,7 @@
 using namespace glmock;
 
 GLUseProgram::GLUseProgram(GLuint program)
-	: mProgram(program)
+	: GLCommand("glUseProgram"), mProgram(program)
 {
 }
 
@@ -14,18 +14,14 @@ GLUseProgram::~GLUseProgram()
 void GLUseProgram::Eval(GLuint program)
 {
 	if(mProgram != program) {
-		char expected[10] = {0};
-		char actual[10] = {0};
-		itoa(mProgram, expected, 10);
-		itoa(program, actual, 10);
-		GLFramework::AddBadParameter(this, "program", expected, actual);
+		GLFramework::AddBadParameter(this->Name, "program", IntToString(mProgram), IntToString(program));
 	}
 }
 
 extern "C" {
 	#undef glUseProgram
 	void CALL_CONV glUseProgram(GLuint program) {
-		GLUseProgram* command = GLFramework::CastAndGet<GLUseProgram>();
+		GLUseProgram* command = GLFramework::CastAndGet<GLUseProgram>("glUseProgram");
 		if(command != NULL) {
 			command->Eval(program);
 			delete command;

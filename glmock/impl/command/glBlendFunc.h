@@ -1,12 +1,12 @@
 #pragma once 
 
-#include "../../command.h"
+#include "../gl_command.h"
 
 namespace glmock
 {
 	//
 	// http://www.opengl.org/sdk/docs/man3/xhtml/glBlendFunc.xml
-	class DLL_EXPORT GLBlendFunc : public ICommand
+	class GLBlendFunc : public GLCommand
 	{
 	public:
 		GLBlendFunc(GLenum sfactor, GLenum dfactor);

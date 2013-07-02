@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../../../command.h"
+#include "../../gl_command.h"
 
 namespace glmock
 {
 	//
 	// http://www.opengl.org/sdk/docs/man3/xhtml/glUseProgram.xml
-	class DLL_EXPORT GLUseProgram : public ICommand
+	class GLUseProgram : public GLCommand
 	{
 	public:
 		GLUseProgram(GLuint program);

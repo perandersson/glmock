@@ -2,7 +2,9 @@
 #include "../gl_framework.h"
 using namespace glmock;
 
-GLGetError::GLGetError() : mReturns(GL_NO_ERROR)
+GLGetError::GLGetError() 
+	: GLCommand("glGetError"),
+	mReturns(GL_NO_ERROR)
 {
 }
 
@@ -22,7 +24,7 @@ GLenum GLGetError::Eval()
 
 extern "C" {
 	DLL_EXPORT GLenum CALL_CONV glGetError(void) {
-		GLGetError* command = GLFramework::CastAndGet<GLGetError>();
+		GLGetError* command = GLFramework::CastAndGet<GLGetError>("glGetError");
 		if(command != NULL) {
 			return command->Eval();
 		}

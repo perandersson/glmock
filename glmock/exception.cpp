@@ -5,3 +5,11 @@ IValidationException::IValidationException(CommandError*& const errors, const un
 	: Errors(errors), Count(count)
 {
 }
+
+MockEngineNotInitializedException::MockEngineNotInitializedException()
+{
+}
+
+MockEngineNotInitializedException::~MockEngineNotInitializedException()
+{
+}

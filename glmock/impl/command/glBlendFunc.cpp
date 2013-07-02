@@ -3,7 +3,7 @@
 using namespace glmock;
 
 GLBlendFunc::GLBlendFunc(GLenum sfactor, GLenum dfactor)
-	: mSFactor(sfactor), mDFactor(dfactor)
+	: GLCommand("glBlendFunc"), mSFactor(sfactor), mDFactor(dfactor)
 {
 }
 
@@ -16,13 +16,13 @@ void GLBlendFunc::Eval(GLenum sfactor, GLenum dfactor)
 	if(sfactor != mSFactor) {
 		const char* expected = AsString(mSFactor);
 		const char* actual = AsString(sfactor);
-		GLFramework::AddBadParameter(this, "sfactor", expected, actual);
+		GLFramework::AddBadParameter(this->Name, "sfactor", expected, actual);
 	}
 
 	if(dfactor != mDFactor) {
 		const char* expected = AsString(mDFactor);
 		const char* actual = AsString(dfactor);
-		GLFramework::AddBadParameter(this, "dfactor", expected, actual);
+		GLFramework::AddBadParameter(this->Name, "dfactor", expected, actual);
 	}
 }
 
@@ -57,7 +57,7 @@ const char* GLBlendFunc::AsString(GLenum value)
 
 extern "C" {
 	DLL_EXPORT void CALL_CONV glBlendFunc(GLenum sfactor, GLenum dfactor) {
-		GLBlendFunc* command = GLFramework::CastAndGet<GLBlendFunc>();
+		GLBlendFunc* command = GLFramework::CastAndGet<GLBlendFunc>("glBlendFunc");
 		if(command != NULL) {
 			command->Eval(sfactor, dfactor);
 		}

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "../../command.h"
+#include "../gl_command.h"
 #include "../gl_strings.h"
 
 namespace glmock
 {
 	//
 	// http://www.opengl.org/sdk/docs/man3/xhtml/glBindTexture.xml
-	class GLBindTexture : public ICommand
+	class GLBindTexture : public GLCommand
 	{
 	public:
 		GLBindTexture(GLenum target, GLuint texture);

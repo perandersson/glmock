@@ -23,7 +23,9 @@
     <ClInclude Include="..\..\glmock\impl\command\glFlush.h" />
     <ClInclude Include="..\..\glmock\impl\command\glGenTextures.h" />
     <ClInclude Include="..\..\glmock\impl\command\glGetError.h" />
+    <ClInclude Include="..\..\glmock\impl\command\glGetIntegerv.h" />
     <ClInclude Include="..\..\glmock\impl\command\glTexImage2D.h" />
+    <ClInclude Include="..\..\glmock\impl\gl_command.h" />
     <ClInclude Include="..\..\glmock\impl\gl_framework.h" />
     <ClInclude Include="..\..\glmock\impl\gl_strings.h" />
   </ItemGroup>
@@ -60,6 +62,7 @@
     <ClCompile Include="..\..\glmock\impl\command\glew\glDetachShader.cpp" />
     <ClCompile Include="..\..\glmock\impl\command\glew\glDrawBuffers.cpp" />
     <ClCompile Include="..\..\glmock\impl\command\glew\glEnableVertexAttribArray.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\glew\glewInit.cpp" />
     <ClCompile Include="..\..\glmock\impl\command\glew\glFramebufferTexture2D.cpp" />
     <ClCompile Include="..\..\glmock\impl\command\glew\glGenBuffers.cpp" />
     <ClCompile Include="..\..\glmock\impl\command\glew\glGenFramebuffers.cpp" />
@@ -90,6 +93,12 @@
     <ClCompile Include="..\..\glmock\impl\command\glTexImage2D.cpp" />
     <ClCompile Include="..\..\glmock\impl\command\glTexParameteri.cpp" />
     <ClCompile Include="..\..\glmock\impl\command\glViewport.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\wglCreateContext.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\wglDeleteContext.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\wglew\wglCreateContextAttribsARB.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\wglew\wglewIsSupported.cpp" />
+    <ClCompile Include="..\..\glmock\impl\command\wglMakeCurrent.cpp" />
+    <ClCompile Include="..\..\glmock\impl\gl_command.cpp" />
     <ClCompile Include="..\..\glmock\impl\gl_framework.cpp" />
     <ClCompile Include="..\..\glmock\impl\gl_strings.cpp" />
   </ItemGroup>
